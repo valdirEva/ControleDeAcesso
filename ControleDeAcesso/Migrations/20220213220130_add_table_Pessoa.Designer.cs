@@ -4,14 +4,16 @@ using ControleDeAcesso.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ControleDeAcesso.Migrations
 {
     [DbContext(typeof(ControleDeAcessoContext))]
-    partial class ControleDeAcessoContextModelSnapshot : ModelSnapshot
+    [Migration("20220213220130_add_table_Pessoa")]
+    partial class add_table_Pessoa
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

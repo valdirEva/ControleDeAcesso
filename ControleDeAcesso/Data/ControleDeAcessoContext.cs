@@ -15,5 +15,7 @@ namespace ControleDeAcesso.Data
         }
 
         public DbSet<ControleDeAcesso.Models.Apartamento> Apartamento { get; set; }
+
+        public DbSet<ControleDeAcesso.Models.Pessoa> Pessoa { get; set; }
     }
 }
