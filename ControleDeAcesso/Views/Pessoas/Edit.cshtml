@@ -14,7 +14,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="ApartamentoId" class="control-label"></label>
+                <label asp-for="Apartamento.Numero" class="control-label"></label>
                 <select asp-for="ApartamentoId" class="form-control" asp-items="ViewBag.ApartamentoId"></select>
                 <span asp-validation-for="ApartamentoId" class="text-danger"></span>
             </div>
@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="DataNascimento" class="control-label"></label>
-                <input asp-for="DataNascimento" class="form-control" />
+                <input asp-for="DataNascimento" class="form-control" type="date"  value="@Model.DataNascimento.Value.ToString("yyyy-MM-dd")" />
                 <span asp-validation-for="DataNascimento" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -45,19 +45,19 @@
             </div>
             <div class="form-group">
                 <label asp-for="Inativo" class="control-label"></label>
-                <select asp-for="Inativo" class="form-control"></select>
+                <input asp-for="Inativo" class="form-control" readonly></input>
                 <span asp-validation-for="Inativo" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="display:none">
                 <label asp-for="DataCriacao" class="control-label"></label>
-                <input asp-for="DataCriacao" class="form-control" />
+                <input asp-for="DataCriacao" class="form-control" value="@Model.DataCriacao.ToString("yyyy-MM-ddThh:mm:ss")"/>
                 <span asp-validation-for="DataCriacao" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="DataAtualizacao" class="control-label"></label>
                 <input asp-for="DataAtualizacao" class="form-control" />
                 <span asp-validation-for="DataAtualizacao" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

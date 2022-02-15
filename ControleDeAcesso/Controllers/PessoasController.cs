@@ -86,7 +86,7 @@ namespace ControleDeAcesso.Controllers
             {
                 return NotFound();
             }
-            ViewData["ApartamentoId"] = new SelectList(_context.Apartamento, "Id", "NUmero", pessoa.ApartamentoId);
+            ViewData["ApartamentoId"] = new SelectList(_context.Apartamento, "Id", "Numero", pessoa.ApartamentoId);
             return View(pessoa);
         }
 
@@ -106,6 +106,7 @@ namespace ControleDeAcesso.Controllers
             {
                 try
                 {
+                    pessoa.DataAtualizacao = DateTime.Now;
                     _context.Update(pessoa);
                     await _context.SaveChangesAsync();
                 }
